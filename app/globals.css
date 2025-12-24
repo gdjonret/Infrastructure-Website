@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary-blue: #0047AB; /* Royal Blue */
+  --secondary-blue: #1E3A8A; /* Darker Blue */
+  --light-blue: #93C5FD; /* Light Blue */
+  --primary-gold: #FFD700; /* Gold */
+  --secondary-gold: #DAA520; /* Golden Rod */
+  --light-gold: #FEF3C7; /* Light Gold */
+}
+
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary-blue: #1E40AF; /* Darker Blue for dark mode */
+    --secondary-blue: #1E3A8A; /* Darker Blue */
+    --light-blue: #60A5FA; /* Light Blue for dark mode */
+    --primary-gold: #F59E0B; /* Amber for dark mode */
+    --secondary-gold: #B45309; /* Darker Amber for dark mode */
+    --light-gold: #FCD34D; /* Light Amber for dark mode */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Remove any corner triangles */
+*::before,
+*::after {
+  border-top-color: transparent !important;
+  border-right-color: transparent !important;
+  border-left-color: transparent !important;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.3s ease-out;
+}
